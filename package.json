@@ -3,7 +3,19 @@
   "version": "1.0.0",
   "description": "node api example",
   "main": "src/app.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./bin/app.js",
+    "dev": "ts-node ./src/app.ts"
+  },
   "repository": "git@github.com:andyle83/node-api.git",
   "author": "andy le",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^16.4.11",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "ts-node": "^10.1.0"
+  }
 }

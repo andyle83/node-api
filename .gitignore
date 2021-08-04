@@ -39,3 +39,6 @@ jspm_packages
 
 # Visual Code
 .history
+
+# TypeSript output's compile
+bin
