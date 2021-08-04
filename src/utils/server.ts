@@ -9,6 +9,7 @@ import morganBody from 'morgan-body';
 
 import {expressDevLogger} from '@exmpl/utils/express_dev_logger';
 import * as api from '@exmpl/api/controllers';
+import config from '@exmpl/config';
 
 export async function createServer(): Promise<Express> {
   const yamlSpecFile = './config/openapi.yml';
@@ -19,9 +20,17 @@ export async function createServer(): Promise<Express> {
   // Server init
   const server = express();
   server.use(bodyParser.json());
-  server.use(morgan(':method :url :status :response-time ms - :res[content-length]'));
-  morganBody(server);
-  server.use(expressDevLogger);
+  if (config.morganLogger) {
+    server.use(morgan(':method :url :status :response-time ms - :res[content-length]'));
+  }
+
+  if (config.morganBodyLogger) {
+    morganBody(server);
+  }
+
+  if (config.exmplDevLogger) {
+    server.use(expressDevLogger);
+  }
 
   // Setup API validator
   const validatorOptions = {
