@@ -1,0 +1,9 @@
+{
+  "name": "node-api",
+  "version": "1.0.0",
+  "description": "node api example",
+  "main": "src/app.ts",
+  "repository": "git@github.com:andyle83/node-api.git",
+  "author": "andy le",
+  "license": "MIT"
+}
