@@ -3,7 +3,11 @@ import * as OpenApiValidator from 'express-openapi-validator';
 import { Express } from 'express-serve-static-core';
 import { connector, summarise } from 'swagger-routes-express';
 import YAML from 'yamljs';
+import bodyParser from 'body-parser';
+import morgan from 'morgan';
+import morganBody from 'morgan-body';
 
+import {expressDevLogger} from '@exmpl/utils/express_dev_logger';
 import * as api from '@exmpl/api/controllers';
 
 export async function createServer(): Promise<Express> {
@@ -14,6 +18,10 @@ export async function createServer(): Promise<Express> {
 
   // Server init
   const server = express();
+  server.use(bodyParser.json());
+  server.use(morgan(':method :url :status :response-time ms - :res[content-length]'));
+  morganBody(server);
+  server.use(expressDevLogger);
 
   // Setup API validator
   const validatorOptions = {
