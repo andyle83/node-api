@@ -5,8 +5,8 @@
   "main": "src/app.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node ./bin/app.js",
-    "dev": "ts-node ./src/app.ts"
+    "start": "node -r tsconfig-paths/register ./bin/app.js",
+    "dev": "ts-node -r tsconfig-paths/register ./src/app.ts"
   },
   "repository": "git@github.com:andyle83/node-api.git",
   "author": "andy le",
@@ -20,6 +20,7 @@
     "express": "^4.17.1",
     "express-openapi-validator": "^4.12.15",
     "swagger-routes-express": "^3.3.0",
+    "tsconfig-paths": "^3.10.1",
     "typescript": "^4.3.5",
     "validator": "^13.6.0",
     "yamljs": "^0.3.0"
