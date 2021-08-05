@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable prefer-rest-params */
+/* eslint-disable @typescript-eslint/ban-types */
 import express from 'express'
 
 export const expressDevLogger = (req: express.Request, res: express.Response, next: express.NextFunction): void => {

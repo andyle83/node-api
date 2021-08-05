@@ -16,6 +16,6 @@ export function auth(req: express.Request, res: express.Response, next: express.
       }
     })
     .catch(err => {
-      writeJsonResponse(res, 500, {error: {type: 'internal_server_error', message: 'Internal Server Error'}})
+      writeJsonResponse(res, 500, {error: {type: 'internal_server_error', message: `Internal Server Error ${err}`}})
     })
-};
+}

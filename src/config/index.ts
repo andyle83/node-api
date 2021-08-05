@@ -17,7 +17,7 @@ interface Config {
   morganLogger: boolean
   morganBodyLogger: boolean
   exmplDevLogger: boolean
-};
+}
 
 const config: Config = {
   morganLogger: parsedEnv.MORGAN_LOGGER as boolean,

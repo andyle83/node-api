@@ -1,4 +1,4 @@
-import * as express from 'express';
+import * as express from 'express'
 import {writeJsonResponse} from '@exmpl/utils/express'
  
 export function hello(req: express.Request, res: express.Response): void {
@@ -7,7 +7,7 @@ export function hello(req: express.Request, res: express.Response): void {
   res.json({
     "message": message
   });
-};
+}
 
 export function goodbye(req: express.Request, res: express.Response): void {
   const userId = res.locals.auth.userId

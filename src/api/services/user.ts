@@ -7,10 +7,10 @@ function auth(bearerToken: string): Promise<AuthResponse> {
     if (token === 'fakeToken') {
       resolve({userId: 'fakeUserId'})
       return
-    };
+    }
 
     resolve({error: {type: 'unauthorized', message: 'Authentication Failed'}});
   });
-};
+}
 
 export default {auth: auth};

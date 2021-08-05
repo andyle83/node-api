@@ -5,6 +5,8 @@
   "main": "src/app.ts",
   "scripts": {
     "build": "tsc",
+    "lint": "eslint src/**/*.ts",
+    "format": "eslint src/**/*.ts --fix",
     "start": "cross-env ENV_FILE=./config/.env.prod node -r tsconfig-paths/register ./bin/app.js",
     "dev": "cross-env ENV_FILE=./config/.env.dev ts-node -r tsconfig-paths/register ./src/app.ts",
     "test:unit": "cross-env ENV_FILE=./config/.env.test jest"
@@ -35,7 +37,10 @@
   "devDependencies": {
     "@types/jest": "^26.0.24",
     "@types/supertest": "^2.0.11",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
     "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
     "jest": "^27.0.6",
     "supertest": "^6.1.4",
     "ts-jest": "^27.0.4",
