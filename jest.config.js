@@ -5,4 +5,5 @@ module.exports = {
   moduleNameMapper: {
     "@exmpl/(.*)": "<rootDir>/src/$1"
   },
+  modulePathIgnorePatterns: ["<rootDir>/.history/"],
 };
