@@ -1,9 +1,9 @@
 export type ErrorResponse = {error: {type: string, message: string}};
 export type AuthResponse = ErrorResponse | {userId: string};
 
-function auth(bearerToken: string): Promise<AuthResponse> {
+function auth(bearerToken: string | undefined): Promise<AuthResponse> {
   return new Promise(function(resolve, reject) {
-    const token = bearerToken.replace('Bearer ', '')
+    const token = bearerToken?.replace('Bearer ', '')
     if (token === 'fakeToken') {
       resolve({userId: 'fakeUserId'})
       return

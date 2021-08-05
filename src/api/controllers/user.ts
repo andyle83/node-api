@@ -3,7 +3,7 @@ import UserService from '@exmpl/api/services/user';
 import {writeJsonResponse} from '@exmpl/utils/express';
 
 export function auth(req: express.Request, res: express.Response, next: express.NextFunction): void {
-  const token = req.headers.authorization!
+  const token = req?.headers?.authorization
   UserService.auth(token)
     .then(authResponse => {
       if (!(authResponse as any).error) {

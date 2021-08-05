@@ -20,14 +20,18 @@ export async function createServer(): Promise<Express> {
   // Server init
   const server = express();
   server.use(bodyParser.json());
+
+  /* istanbul ignore file */
   if (config.morganLogger) {
     server.use(morgan(':method :url :status :response-time ms - :res[content-length]'));
   }
 
+  /* istanbul ignore file */
   if (config.morganBodyLogger) {
     morganBody(server);
   }
 
+  /* istanbul ignore file */
   if (config.exmplDevLogger) {
     server.use(expressDevLogger);
   }
