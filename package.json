@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "start": "cross-env ENV_FILE=./config/.env.prod node -r tsconfig-paths/register ./bin/app.js",
-    "dev": "cross-env ENV_FILE=./config/.env.dev ts-node -r tsconfig-paths/register ./src/app.ts"
+    "dev": "cross-env ENV_FILE=./config/.env.dev ts-node -r tsconfig-paths/register ./src/app.ts",
+    "test:unit": "cross-env ENV_FILE=./config/.env.test jest"
   },
   "repository": "git@github.com:andyle83/node-api.git",
   "author": "andy le",
@@ -32,7 +33,10 @@
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.24",
     "cross-env": "^7.0.3",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4",
     "ts-node": "^10.1.0"
   }
 }
