@@ -34,8 +34,10 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
+    "@types/supertest": "^2.0.11",
     "cross-env": "^7.0.3",
     "jest": "^27.0.6",
+    "supertest": "^6.1.4",
     "ts-jest": "^27.0.4",
     "ts-node": "^10.1.0"
   }
