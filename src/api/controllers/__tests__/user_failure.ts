@@ -3,6 +3,7 @@ import {Express} from 'express-serve-static-core'
 
 import UserService from '@exmpl/api/services/user'
 import {createServer} from '@exmpl/utils/server'
+import { rejects } from 'assert'
 
 jest.mock('@exmpl/api/services/user')
 jest.setTimeout(10000);
@@ -14,7 +15,7 @@ beforeAll(async () => {
 
 describe('auth failure', () => {
   it('should return 500 & valid response if auth rejects with an error', function(done) {
-    (UserService.auth as jest.Mock).mockRejectedValue(new Error())
+    (UserService.auth as jest.Mock).mockImplementation(() => Promise.reject("error"))
     request(server)
       .get(`/api/v1/goodbye`)
       .set('Authorization', 'Bearer fakeToken')

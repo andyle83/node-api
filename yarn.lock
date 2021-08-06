@@ -773,13 +773,6 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-1.3.2.tgz#93e25bf9ee75fe0fd80b594bc4feb0e862111b5a"
   integrity sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==
 
-"@types/mongodb-memory-server@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@types/mongodb-memory-server/-/mongodb-memory-server-2.3.0.tgz#da9dc2c9ab52d936d28c04d519d6a4a380c922ef"
-  integrity sha512-nveg+f78qRwudPRFVfw2flEdEkhKJIr4rSyQFKagSMb4sGhjFQi0GEKi7zKXgkKkwIlMcLthM1G93vsXgtDxGQ==
-  dependencies:
-    mongodb-memory-server "*"
-
 "@types/mongodb@^3.5.27":
   version "3.6.20"
   resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.6.20.tgz#b7c5c580644f6364002b649af1c06c3c0454e1d2"
@@ -3440,7 +3433,7 @@ mongodb-memory-server-core@7.3.4:
     uuid "^8.3.1"
     yauzl "^2.10.0"
 
-mongodb-memory-server@*, mongodb-memory-server@^7.3.4:
+mongodb-memory-server@^7.3.4:
   version "7.3.4"
   resolved "https://registry.yarnpkg.com/mongodb-memory-server/-/mongodb-memory-server-7.3.4.tgz#044596bac7b291a727aa4b6316dc2facbdb75f24"
   integrity sha512-W3VXLKnZZX5pdfSrLcer7m4RKISiQ8AMG4TTcfl7SMGvKELsUcSGwIWYXP7TeCQ8RkZpj9riz0OxphQow5qi3g==
