@@ -15,7 +15,7 @@ export function auth(req: express.Request, res: express.Response, next: express.
         writeJsonResponse(res, 401, authResponse)
       }
     })
-    .catch(err => {
-      writeJsonResponse(res, 500, {error: {type: 'internal_server_error', message: `Internal Server Error ${err}`}})
+    .catch(() => {
+      writeJsonResponse(res, 500, {error: {type: 'internal_server_error', message: `Internal Server Error`}})
     })
 }
